@@ -1,5 +1,5 @@
 ﻿namespace SVCommon;
 
-public class Class12
+public class Class
 {
 }
