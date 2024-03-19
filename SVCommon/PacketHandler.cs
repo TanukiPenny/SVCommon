@@ -12,8 +12,10 @@ public class PacketHandler<TConnection>
             switch ((MessageType)packetId)
             {
                 case MessageType.BasicMessage:
+                    OnBasicMessage(conn);
                     break;
                 case MessageType.Ping:
+                    OnPing(conn);
                     break;
                 default:
                     throw new Exception("Packet not registered in PacketHandler!");
