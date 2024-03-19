@@ -1,6 +1,6 @@
 ﻿using MessagePack;
 
-namespace SVCommon;
+namespace SVCommon.Packet;
 
 [MessagePackObject]
 public class BasicMessage
