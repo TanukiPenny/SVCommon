@@ -9,4 +9,5 @@ public enum MessageType
     UserJoin = 5,
     UserLeave = 6,
     HostChange = 7,
+    LoginResponse = 8,
 }
