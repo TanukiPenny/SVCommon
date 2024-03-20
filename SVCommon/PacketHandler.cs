@@ -23,6 +23,22 @@ public class PacketHandler<TConnection>
                     var login = MessagePackSerializer.Deserialize<Login>(bytes, out bytesRead);
                     OnLogin(conn, login);
                     break;
+                case MessageType.DisconnectMessage:
+                    var disconnect = MessagePackSerializer.Deserialize<DisconnectMessage>(bytes, out bytesRead);
+                    OnDisconnectMessage(conn, disconnect);
+                    break;
+                case MessageType.UserJoin:
+                    var join = MessagePackSerializer.Deserialize<UserJoin>(bytes, out bytesRead);
+                    OnUserJoin(conn, join);
+                    break;
+                case MessageType.UserLeave:
+                    var leave = MessagePackSerializer.Deserialize<UserLeave>(bytes, out bytesRead);
+                    OnUserLeave(conn, leave);
+                    break;
+                case MessageType.HostChange:
+                    var hostChange = MessagePackSerializer.Deserialize<HostChange>(bytes, out bytesRead);
+                    OnHostChange(conn, hostChange);
+                    break;
                 default:
                     throw new Exception("Packet not registered in PacketHandler!");
             }
@@ -45,6 +61,10 @@ public class PacketHandler<TConnection>
     public virtual void OnBasicMessage(TConnection conn, BasicMessage msg) {}
     public virtual void OnPing(TConnection conn) {}
     public virtual void OnLogin(TConnection conn, Login login) {}
+    public virtual void OnDisconnectMessage(TConnection conn, DisconnectMessage disconnectMessageisconnectMessage) {}
+    public virtual void OnHostChange(TConnection conn, HostChange hostChange) {}
+    public virtual void OnUserJoin(TConnection conn, UserJoin userJoin) {}
+    public virtual void OnUserLeave(TConnection conn, UserLeave userLeave) {}
     public virtual void OnSerializationException(MessagePackSerializationException exception, int packetID) {}
     public virtual void OnPacketHandlerException(Exception exception, int packetID) {}
     public virtual void OnByteLengthMismatch(TConnection conn, int readBytes, int totalBytes) {}
