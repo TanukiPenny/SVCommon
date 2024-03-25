@@ -4,10 +4,17 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="MessagePack" Version="2.5.140" />
     </ItemGroup>
+
+    <PropertyGroup>
+        <PackageId>SVCommon</PackageId>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/TanukiPenny/SVCommon</RepositoryUrl>
+    </PropertyGroup>
 
 </Project>
