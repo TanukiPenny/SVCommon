@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -15,4 +16,5 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/TanukiPenny/SVCommon</RepositoryUrl>
     </PropertyGroup>
+
 </Project>
