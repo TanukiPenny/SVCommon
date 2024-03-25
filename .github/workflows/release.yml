@@ -24,4 +24,4 @@ jobs:
     - name: Push
       run: dotnet nuget push SVCommon.${VERSION}.nupkg --source https://nuget.pkg.github.com/acraven/index.json --api-key ${NUGET_API_KEY}
       env:
-        GITHUB_TOKEN: ${{ secrets.NUGET_API_KEY }}
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
