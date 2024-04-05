@@ -43,13 +43,19 @@ public class PacketHandler<TConnection>
                     var loginResponse = MessagePackSerializer.Deserialize<LoginResponse>(bytes, out bytesRead);
                     OnLoginResponse(conn, loginResponse);
                     break;
-                case MessageType.NewMedia:
-                    var newMedia = MessagePackSerializer.Deserialize<NewMedia>(bytes, out bytesRead);
-                    OnNewMedia(conn, newMedia);
+                case MessageType.Play:
+                    var play = MessagePackSerializer.Deserialize<Play>(bytes, out bytesRead);
+                    OnPlay(conn, play);
                     break;
                 case MessageType.TimeSync:
                     var timeSync = MessagePackSerializer.Deserialize<TimeSync>(bytes, out bytesRead);
                     OnTimeSync(conn, timeSync);
+                    break;
+                case MessageType.Pause:
+                    OnPause(conn);
+                    break;
+                case MessageType.Stop:
+                    OnStop(conn);
                     break;
                 default:
                     throw new Exception("Packet not registered in PacketHandler!");
@@ -72,8 +78,10 @@ public class PacketHandler<TConnection>
     
     public virtual void OnBasicMessage(TConnection conn, BasicMessage msg) {}
     public virtual void OnPing(TConnection conn) {}
+    public virtual void OnPause(TConnection conn) {}
+    public virtual void OnStop(TConnection conn) {}
     public virtual void OnLogin(TConnection conn, Login login) {}
-    public virtual void OnNewMedia(TConnection conn, NewMedia newMedia) {}
+    public virtual void OnPlay(TConnection conn, Play play) {}
     public virtual void OnTimeSync(TConnection conn, TimeSync timeSync) {}
     public virtual void OnLoginResponse(TConnection conn, LoginResponse loginResponse) {}
     public virtual void OnDisconnectMessage(TConnection conn, DisconnectMessage disconnectMessageisconnectMessage) {}

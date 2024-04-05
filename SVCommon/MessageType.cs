@@ -10,6 +10,8 @@ public enum MessageType
     UserLeave = 6,
     HostChange = 7,
     LoginResponse = 8,
-    NewMedia = 9,
+    Play = 9,
     TimeSync = 10,
+    Pause = 11,
+    Stop = 12,
 }
