@@ -17,6 +17,7 @@ public class PacketHandler<TConnection>
                     OnBasicMessage(conn, msg);
                     break;
                 case MessageType.Ping:
+                    bytesRead = bytes.Length;
                     OnPing(conn);
                     break;
                 case MessageType.Login:
@@ -52,9 +53,11 @@ public class PacketHandler<TConnection>
                     OnTimeSync(conn, timeSync);
                     break;
                 case MessageType.Pause:
+                    bytesRead = bytes.Length;
                     OnPause(conn);
                     break;
                 case MessageType.Stop:
+                    bytesRead = bytes.Length;
                     OnStop(conn);
                     break;
                 case MessageType.ChatMessage:
