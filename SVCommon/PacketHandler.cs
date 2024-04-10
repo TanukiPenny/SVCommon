@@ -57,6 +57,10 @@ public class PacketHandler<TConnection>
                 case MessageType.Stop:
                     OnStop(conn);
                     break;
+                case MessageType.ChatMessage:
+                    var chatMessage=MessagePackSerializer.Deserialize<ChatMessage>(bytes, out bytesRead);
+                    OnChatMessage(conn,chatMessage);
+                    break;
                 default:
                     throw new Exception("Packet not registered in PacketHandler!");
             }
@@ -77,6 +81,7 @@ public class PacketHandler<TConnection>
     }
     
     public virtual void OnBasicMessage(TConnection conn, BasicMessage msg) {}
+    public virtual void OnChatMessage(TConnection conn, ChatMessage msg) {}
     public virtual void OnPing(TConnection conn) {}
     public virtual void OnPause(TConnection conn) {}
     public virtual void OnStop(TConnection conn) {}

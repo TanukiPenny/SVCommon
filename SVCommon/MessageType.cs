@@ -14,4 +14,5 @@ public enum MessageType
     TimeSync = 10,
     Pause = 11,
     Stop = 12,
+    ChatMessage = 13,
 }
