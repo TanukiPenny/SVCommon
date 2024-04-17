@@ -1,3 +1,4 @@
+// PB MB, JP start
 using MessagePack;
 
 namespace SVCommon.Packet;
@@ -7,3 +8,4 @@ public class Pause
 {
     
 }
+// PB MB, JP end

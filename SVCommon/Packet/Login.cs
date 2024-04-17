@@ -1,3 +1,4 @@
+// PB, MB, JP start
 using MessagePack;
 
 namespace SVCommon.Packet;
@@ -13,3 +14,4 @@ public class Login
         return $"Login - [Nick: {Nick}]";
     }
 }
+// PB MB, JP end

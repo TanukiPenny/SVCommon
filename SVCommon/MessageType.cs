@@ -1,3 +1,4 @@
+// PB, MB, JP start
 namespace SVCommon;
 
 public enum MessageType
@@ -16,3 +17,4 @@ public enum MessageType
     Stop = 12,
     ChatMessage = 13,
 }
+// PB, MB, JP end

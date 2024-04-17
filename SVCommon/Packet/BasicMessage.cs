@@ -1,4 +1,5 @@
-﻿using MessagePack;
+﻿// PB, MB, JP start
+using MessagePack;
 
 namespace SVCommon.Packet;
 
@@ -13,3 +14,4 @@ public class BasicMessage
         return $"BasicMessage - [Message: {Message}]";
     }
 }
+// PB, MB, JP end

@@ -1,3 +1,4 @@
+// PB, MB, JP start
 using MessagePack;
 using SVCommon.Packet;
 
@@ -100,3 +101,4 @@ public class PacketHandler<TConnection>
     public virtual void OnPacketHandlerException(Exception exception, int packetID) {}
     public virtual void OnByteLengthMismatch(TConnection conn, int readBytes, int totalBytes) {}
 }
+// PB, MB, JP end

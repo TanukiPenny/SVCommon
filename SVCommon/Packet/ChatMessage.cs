@@ -1,4 +1,5 @@
-﻿using MessagePack;
+﻿// MB start
+using MessagePack;
 
 namespace SVCommon.Packet;
 
@@ -14,3 +15,4 @@ public class ChatMessage
 
 
 }
+// MB end

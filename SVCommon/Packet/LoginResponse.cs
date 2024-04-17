@@ -1,3 +1,4 @@
+// PB MB, JP start
 using MessagePack;
 
 namespace SVCommon.Packet;
@@ -12,3 +13,4 @@ public class LoginResponse
     public bool Host { get; set; }
 
 }
+// PB MB, JP end
