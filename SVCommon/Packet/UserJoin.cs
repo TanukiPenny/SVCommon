@@ -1,3 +1,4 @@
+// PB, MB, JP start
 using MessagePack;
 
 namespace SVCommon.Packet;
@@ -8,3 +9,4 @@ public class UserJoin
     [Key(0)]
     public string Nick { get; set; }
 }
+// PB, MB, JP end
