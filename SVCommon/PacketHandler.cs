@@ -6,6 +6,7 @@ namespace SVCommon;
 
 public class PacketHandler<TConnection>
 {
+    // Method for parsing by packet id, deserializing, then sending to correct override
     public void HandlePacket(TConnection conn, byte[] bytes, int packetId)
     {
         int bytesRead = 0;
@@ -84,6 +85,7 @@ public class PacketHandler<TConnection>
         }
     }
     
+    // All the overrides used to receive packets in the server and client
     public virtual void OnBasicMessage(TConnection conn, BasicMessage msg) {}
     public virtual void OnChatMessage(TConnection conn, ChatMessage msg) {}
     public virtual void OnPing(TConnection conn) {}

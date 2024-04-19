@@ -1,6 +1,7 @@
 // PB, MB, JP start
 namespace SVCommon;
 
+// Enum of all the different packet types
 public enum MessageType
 {
     BasicMessage = 1,
